@@ -1,0 +1,30 @@
+
+{
+    "manifest_version": 3,
+    "name": "Design Inspector",
+    "version": "1.0",
+    "description": "Extract design specs (fonts, spacing, colors) from any webpage.",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "commands": {
+      "run-inspector": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+D"
+        },
+        "description": "Run the Design Inspector"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_title": "Design Inspector"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+}
+  
