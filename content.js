@@ -262,7 +262,7 @@
   container.innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
       <span style="font-weight:600;font-size:16px;letter-spacing:-0.01em;">Design Inspector</span>
-      <button style="background:rgba(36,36,38,0.7);color:#fff;border:none;padding:2px 10px;cursor:pointer;border-radius:8px;font-size:14px;transition:background 0.15s;outline:none;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='rgba(36,36,38,0.7)'" onclick="this.parentElement.parentElement.remove()">✕</button>
+      <button id="design-inspector-close-btn" style="background:rgba(36,36,38,0.7);color:#fff;border:none;padding:2px 10px;cursor:pointer;border-radius:8px;font-size:14px;transition:background 0.15s;outline:none;">✕</button>
     </div>
     <div style="margin-bottom:14px;">
       <span style="color:#a1a1aa;font-weight:500;">Fonts:</span><br>${pretty(result.fonts)}
@@ -273,6 +273,12 @@
     ${result.sectionSpacings.length ? `<div style="margin-bottom:14px;"><span style="color:#a1a1aa;font-weight:500;">Section Spacing:</span><br>${result.sectionSpacings.map(s => `<div style='margin-bottom:2px;'><span style='color:#a1a1aa;'>${s.between}:</span> <span style='color:#fff;'>${s.spacing}</span></div>`).join('')}</div>` : ''}
     ${result.colors.length ? `<div style="margin-bottom:0;"><span style="color:#a1a1aa;font-weight:500;">Prominent Colors:</span><br>${result.colors.map(c => `<span style='display:inline-block;width:18px;height:18px;border-radius:6px;background:${c};margin-right:8px;border:1px solid #333;vertical-align:middle;'></span><span style='vertical-align:middle;'>${c}</span>`).join('<br>')}</div>` : ''}
   `;
+
+  // Attach close button event listener
+  const closeBtn = container.querySelector('#design-inspector-close-btn');
+  if (closeBtn) {
+    closeBtn.onclick = () => container.remove();
+  }
 
   document.body.appendChild(container);
 })();
