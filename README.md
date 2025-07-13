@@ -46,15 +46,6 @@ design-inspector/
 
 ---
 
-## ✨ Coming Soon (TODOs)
-
-- [ ] “Copy All” button for quick export to Figma
-- [ ] JSON export
-- [ ] Figma/Framer plugin integration
-- [ ] Custom selector targeting (e.g. buttons, links)
-
----
-
 ## 🛠 Tech Stack
 
 - Plain JavaScript (no frameworks)
