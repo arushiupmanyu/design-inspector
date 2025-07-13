@@ -37,3 +37,26 @@ Instead of digging into DevTools every time, just press a shortcut and see the f
 
 ## 📁 Folder Structure
 
+design-inspector/
+├── manifest.json
+├── background.js
+├── content.js
+└── README.md
+
+
+---
+
+## ✨ Coming Soon (TODOs)
+
+- [ ] “Copy All” button for quick export to Figma
+- [ ] JSON export
+- [ ] Figma/Framer plugin integration
+- [ ] Custom selector targeting (e.g. buttons, links)
+
+---
+
+## 🛠 Tech Stack
+
+- Plain JavaScript (no frameworks)
+- Chrome Extension APIs
+- DOM + CSS Parsing
